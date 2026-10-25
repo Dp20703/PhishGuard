@@ -1,5 +1,4 @@
 ml/data/urlset.csv
 venv
 *.pyc
-ml/__init__.py
-backend/model/*
+.env

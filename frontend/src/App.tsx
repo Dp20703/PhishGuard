@@ -82,7 +82,16 @@ type IconProps = { className?: string };
 
 function ShieldIcon({ className = "h-5 w-5" }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
       <path d="M12 3 4 6v6c0 4.5 3.2 8.2 8 9 4.8-.8 8-4.5 8-9V6l-8-3Z" />
       <path d="m9 12 2 2 4-4" />
     </svg>
@@ -91,7 +100,16 @@ function ShieldIcon({ className = "h-5 w-5" }: IconProps) {
 
 function SearchIcon({ className = "h-5 w-5" }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
       <circle cx="11" cy="11" r="7" />
       <path d="m21 21-4.3-4.3" />
     </svg>
@@ -100,7 +118,16 @@ function SearchIcon({ className = "h-5 w-5" }: IconProps) {
 
 function CheckIcon({ className = "h-5 w-5" }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
       <path d="m5 12 5 5L20 7" />
     </svg>
   );
@@ -108,7 +135,16 @@ function CheckIcon({ className = "h-5 w-5" }: IconProps) {
 
 function AlertIcon({ className = "h-5 w-5" }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
       <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
       <path d="M12 9v4M12 17h.01" />
     </svg>
@@ -117,7 +153,16 @@ function AlertIcon({ className = "h-5 w-5" }: IconProps) {
 
 function CopyIcon({ className = "h-4 w-4" }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
       <rect x="9" y="9" width="11" height="11" rx="2" />
       <path d="M5 15V6a2 2 0 0 1 2-2h9" />
     </svg>
@@ -140,7 +185,14 @@ function RiskGauge({ percent, tone }: { percent: number; tone: Tone }) {
       aria-label={`Phishing probability ${percent} percent`}
     >
       <svg viewBox="0 0 128 128" className="h-full w-full -rotate-90">
-        <circle cx="64" cy="64" r={radius} fill="none" strokeWidth="10" className="stroke-slate-800" />
+        <circle
+          cx="64"
+          cy="64"
+          r={radius}
+          fill="none"
+          strokeWidth="10"
+          className="stroke-slate-800"
+        />
         <circle
           cx="64"
           cy="64"
@@ -365,7 +417,9 @@ function App() {
                       <span
                         className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 ring-inset ${tone.badge}`}
                       >
-                        <span className={`h-1.5 w-1.5 rounded-full ${tone.dot}`} />
+                        <span
+                          className={`h-1.5 w-1.5 rounded-full ${tone.dot}`}
+                        />
                         {tone.level}
                       </span>
 
@@ -466,12 +520,17 @@ function App() {
                         disabled={loading}
                         className="flex w-full items-center gap-3 px-4 py-3 text-left transition hover:bg-slate-800/50 disabled:opacity-60"
                       >
-                        <span className={`h-2 w-2 shrink-0 rounded-full ${itemTone.dot}`} />
+                        <span
+                          className={`h-2 w-2 shrink-0 rounded-full ${itemTone.dot}`}
+                        />
                         <span className="min-w-0 flex-1 truncate font-mono text-xs text-slate-300">
                           {item.url}
                         </span>
-                        <span className={`shrink-0 text-xs font-semibold ${itemTone.text}`}>
-                          {itemTone.title} · {Math.round(item.probability * 100)}%
+                        <span
+                          className={`shrink-0 text-xs font-semibold ${itemTone.text}`}
+                        >
+                          {itemTone.title} ·{" "}
+                          {Math.round(item.probability * 100)}%
                         </span>
                       </button>
                     </li>
@@ -495,7 +554,9 @@ function App() {
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-sm font-bold text-blue-400 ring-1 ring-inset ring-blue-500/20">
                     {index + 1}
                   </span>
-                  <h3 className="mt-4 font-semibold text-white">{step.title}</h3>
+                  <h3 className="mt-4 font-semibold text-white">
+                    {step.title}
+                  </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-400">
                     {step.text}
                   </p>

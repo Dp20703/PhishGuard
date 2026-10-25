@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from contextlib import asynccontextmanager
 
@@ -68,12 +69,23 @@ app = FastAPI(
 # CORS
 # ==========================================
 
+# Local dev origins are always allowed. In production, set the
+# ALLOWED_ORIGINS environment variable to your deployed frontend URL(s),
+# comma-separated, e.g. "https://phishguard.vercel.app"
+DEFAULT_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+EXTRA_ORIGINS = [
+    origin.strip().rstrip("/")
+    for origin in os.getenv("ALLOWED_ORIGINS", "").split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=DEFAULT_ORIGINS + EXTRA_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
