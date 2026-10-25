@@ -10,7 +10,5 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.3
-      # Set this in the Render dashboard to your Vercel URL
-      # (e.g. https://phishguard.vercel.app), no trailing slash
       - key: ALLOWED_ORIGINS
         sync: false
