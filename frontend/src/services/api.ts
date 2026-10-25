@@ -1,7 +1,7 @@
-const API_URL = (import.meta.env.API_URL ?? "http://127.0.0.1:8000").replace(
-  /\/+$/,
-  "",
-);
+// Set VITE_API_URL in production (e.g. on Vercel). Falls back to local dev.
+const API_URL = (
+  import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000"
+).replace(/\/+$/, "");
 
 export interface PredictionResponse {
   url: string;
